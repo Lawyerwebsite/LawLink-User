@@ -21,6 +21,23 @@ import ImmigrationLawyer from "./Components/components/Lawyer/Immigration";
 import Privacypolicy from "./Components/components/Footer/Privacypolicy.";
 import FAQ from "./Components/components/Footer/Terms";
 import ReviewForm from "./Components/ReusableComponents/ReviewComp";
+import FindLawyerPage from "./Components/components/Pages/FindLawyer";
+import About from "./Components/components/About/About";
+import Blog from "./Components/components/Blog/Blog";
+import Business from "./Components/components/Blog/Business";
+import AboutLaw from "./Components/components/Blog/AboutLaw";
+import Appeal from "./Components/components/Blog/Appeal";
+import Tips from "./Components/components/Blog/Tips";
+import Beg from "./Components/components/Blog/Beg";
+import Spouse from "./Components/components/Blog/Spouse";
+import Will from "./Components/components/Blog/Will";
+import Nrc from "./Components/components/Blog/Nrc";
+import Penal from "./Components/components/Blog/Penal";
+import Details from "./Components/components/Blog/Details";
+import Contact from "./Components/ReusableComponents/Contact";
+import ErrorPage from "./Components/ReusableComponents/404-Error";
+import Confirmation from "./Components/components/NavComponent/Confirmation";
+import EditProfile from "./Components/ReusableComponents/Profile";
 
 const RouteComp = () => {
   return (
@@ -29,6 +46,7 @@ const RouteComp = () => {
       <Route path="/register" element={<Signup />} />
       <Route path="/login" element={<Signin />} />
       <Route path="/forgotpassword" element={<Forgot />} />
+      <Route path="*" element={<ErrorPage/>}/>
 
       <Route path="/" element={<LawLink />} />
       
@@ -36,13 +54,14 @@ const RouteComp = () => {
       <Route path="/lawyerbycategory" element={<Lawyer />} />
       <Route path="findlawyer/lawyers" element={<Lawyer />} />
       <Route path="/findlawyer/lawyer/:id" element={<LawyerProfile />} />
+      <Route path="/confirmation/:_id" element={<Confirmation/>}/>
 
       <Route path="/abdul" element={<LawyerProfile/>} />
 
     
-      <Route path="/lawyer" element={<FindLawyer/>} />
+      <Route path="/lawyer" element={<FindLawyerPage/>} />
       <Route path="/card/:_id" element={<LawyerDesktopUI/>} />
-      <Route path="/cta" element={<CtaApp/>} />
+      <Route path="/booking/:_id" element={<CtaApp/>} />
       <Route path="/bankinglaw" element={<BankingLawyer/>} />
       <Route path="/civillaw" element={<CivilLawyer/>} />
       <Route path="/criminallaw" element={<CriminalLawyer/>} />
@@ -56,6 +75,24 @@ const RouteComp = () => {
       <Route path="/terms" element={<FAQ/>} />
 
       <Route path="/review" element={<ReviewForm/>} />
+      <Route path="/profile" element={<EditProfile/>} />
+      <Route path="/about" element={<About/>} />
+      <Route path="/contact" element={<Contact/>} />
+
+      <Route path="/blog" element={<Blog/>} />
+      <Route path="/business" element={<Business/>} />
+      <Route path="/aboutlaw" element={<AboutLaw/>}/>
+      <Route path="/appeal" element={<Appeal/>}/>
+      <Route path="/tips" element={<Tips/>}/>
+      <Route path="/beg" element={<Beg/>}/>
+      <Route path="/spouse" element={<Spouse/>}/>
+      <Route path="/will" element={<Will/>}/>
+      <Route path="/nrc" element={<Nrc/>}/>
+      <Route path="/penal" element={<Penal/>}/>
+      <Route path="/details" element={<Details/>}/>
+
+     
+      
 
 
     </Routes>

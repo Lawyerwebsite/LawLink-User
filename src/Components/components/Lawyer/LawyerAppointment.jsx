@@ -1,4 +1,3 @@
-
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
@@ -47,7 +46,8 @@ const FindLawyer = () => {
   const [lawyers, setLawyers] = useState(mockLawyers);
   const [searchLocation, setSearchLocation] = useState("");
   const [selectedGender, setSelectedGender] = useState("");
-  const [selectedSpecialization, setSelectedSpecialization] = useState(categoryFromParams);
+  const [selectedSpecialization, setSelectedSpecialization] =
+    useState(categoryFromParams);
 
   const getLawyers = async () => {
     try {
@@ -65,7 +65,8 @@ const FindLawyer = () => {
   const filteredLawyers = lawyers.filter((lawyer) => {
     const locationMatch =
       !searchLocation ||
-      (lawyer.city && lawyer.city.toLowerCase().includes(searchLocation.toLowerCase()));
+      (lawyer.city &&
+        lawyer.city.toLowerCase().includes(searchLocation.toLowerCase()));
 
     const genderMatch =
       !selectedGender || (lawyer.gender && lawyer.gender === selectedGender);
@@ -75,10 +76,8 @@ const FindLawyer = () => {
       (lawyer.category &&
         lawyer.category.toLowerCase() === selectedSpecialization.toLowerCase());
 
-     
     return locationMatch && genderMatch && specializationMatch;
   });
-
 
   return (
     <div className="flex min-h-screen bg-gray-100">
@@ -154,35 +153,49 @@ const FindLawyer = () => {
           {filteredLawyers.map((lawyer) => (
             <div
               key={lawyer._id}
-              className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition"
+              className="bg-white shadow-md rounded-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out"
             >
-              <img
-                src={lawyer.img || `http://localhost:7000/upload/${lawyer.fileName}`}
-                alt={lawyer.name}
-                className="w-full h-56 object-cover"
-              />
+              <div className="relative p-6 ">
+                <img
+                  src={
+                    lawyer.img ||
+                    `http://localhost:7000/upload/${lawyer.fileName}`
+                  }
+                  alt={lawyer.name}
+                  className="w-full h-56 "
+                />
+                <div className="absolute top-2 left-2 bg-blue-500 text-white text-sm px-3 py-1 rounded-full shadow">
+                  {lawyer.specialization}
+                </div>
+              </div>
 
               <div className="p-6">
-                <h2 className="text-2xl font-bold text-gray-800 mb-2">
+                <h2 className="text-xl font-bold text-gray-800 truncate">
                   {lawyer.name}
                 </h2>
                 <p className="text-gray-600 text-lg">
                   <strong>Specialization:</strong> {lawyer.category}
                 </p>
-                <p className="text-gray-600 text-lg">
-                  <strong>Location:</strong> {lawyer.city}
+                <p className="text-gray-600 mt-2">
+                  <span className="font-semibold">Location:</span> {lawyer.city}
                 </p>
-                <p className="text-gray-600 text-lg">
-                  <strong>Gender:</strong> {lawyer.gender}
+                <p className="text-gray-600 mt-1">
+                  <span className="font-semibold">Qualification:</span>{" "}
+                  {lawyer.qualification}
                 </p>
 
-                <Link to={`/card/${lawyer._id}`}>
-                  <button
-                    className="mt-4 w-full py-2 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 transition"
-                  >
-                    View
-                  </button>
-                </Link>
+                <div className="flex items-center justify-between mt-4">
+                  <Link to={`/card/${lawyer._id}`}>
+                    <button className="py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow hover:bg-blue-600 transition duration-200">
+                      View Profile
+                    </button>
+                  </Link>
+                  {/* <Link to={"/booking"}>
+                    <button className="py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow hover:bg-blue-600 transition duration-200">
+                      Book Appointment
+                    </button>
+                  </Link> */}
+                </div>
               </div>
             </div>
           ))}

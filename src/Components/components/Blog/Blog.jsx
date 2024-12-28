@@ -4,6 +4,8 @@ import { FaAngleRight } from "react-icons/fa";
 import BlogCard from "./BlogCard";
 import CatBlog from "./CatBlog";
 import { useNavigate } from 'react-router-dom';
+import NavbarComp from "../../ReusableComponents/NavbarComponent";
+import Footer from "../Footer";
 
 const Blog = () => {
     const [searchQuery, setSearchQuery] = useState("");  
@@ -34,7 +36,8 @@ const Blog = () => {
 
     return (
         <div>
-            <div className="relative">
+            <NavbarComp/>
+            <div className="relative mt-16">
                 <img
                     src="https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                     alt="Background"
@@ -88,6 +91,7 @@ const Blog = () => {
                 <BlogCard />
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 };

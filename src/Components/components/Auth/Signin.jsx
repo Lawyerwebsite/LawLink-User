@@ -80,7 +80,7 @@ const Signin = () => {
             </div>
           </div>
           <div className="text-end m-2">
-          <Link to="/forgot" className="text-blue-400 hover:underline  font-medium">
+          <Link to="/forgotpassword" className="text-blue-400 hover:underline  font-medium">
               Forgot password
             </Link></div>
           {/* Submit Button */}
@@ -94,7 +94,7 @@ const Signin = () => {
           {/* Register Link */}
           <p className="mt-4 text-center text-white">
             Don’t have an account?{" "}
-            <Link to="/signup" className="text-blue-400 hover:underline font-medium">
+            <Link to="/register" className="text-blue-400 hover:underline font-medium">
               Register here
             </Link>
           </p>

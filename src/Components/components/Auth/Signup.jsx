@@ -34,7 +34,7 @@ export const Signup = () => {
     try {
       const res = await axios.post("http://localhost:7000/user/signup", inputdata);
       toast.success(res.data.message);
-      navigate("/signin");
+      navigate("/login");
     } catch (err) {
       toast.error(err.response?.data?.message || "Something went wrong");
     }
@@ -147,7 +147,7 @@ export const Signup = () => {
           {/* Login Redirect */}
           <p className="mt-4 text-center text-white">
             Already have an account?{" "}
-            <a href="/signin" className="text-blue-400 hover:underline font-medium">
+            <a href="/login" className="text-blue-400 hover:underline font-medium">
               Login here
             </a>
           </p>

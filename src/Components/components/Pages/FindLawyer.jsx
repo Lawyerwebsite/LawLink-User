@@ -1,12 +1,12 @@
 import React from "react";
 import NavbarComp from "../../ReusableComponents/NavbarComponent";
-import Lawyer from "../FindLawyer/Lawyer";
+// import Lawyer from "../FindLawyer/Lawyer";
 import Footer from "../Footer";
 import LawyerAppointments from "../Lawyer/LawyerAppointment";
 
-const FindLawyer = () => {
+const FindLawyerPage = () => {
   return (
-    <div className="mt-[100px] w-full">
+    <div className="mt-[80px] w-full">
       <header>
         <NavbarComp />
       </header>
@@ -20,4 +20,4 @@ const FindLawyer = () => {
   );
 };
 
-export default FindLawyer;
+export default FindLawyerPage;

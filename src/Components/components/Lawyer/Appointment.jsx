@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { Profiler, useEffect, useState } from "react";
 import { FaBriefcase, FaCalendarAlt, FaStar } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 import NavbarComp from "../../ReusableComponents/NavbarComponent";
 import axios from "axios";
 import LawNav from "./LawyerInfo/LawNav";
+import { MdPlace } from "react-icons/md";
+import { SiEducative } from "react-icons/si";
+import { RiGraduationCapFill } from "react-icons/ri";
 // import LawNav from "./LawyerInfo/LawNav";
 
 const LawyerDesktopUI = () => {
@@ -44,7 +47,7 @@ const LawyerDesktopUI = () => {
       <NavbarComp />
       <div className="w-[80%] bg-white shadow-lg rounded-lg overflow-hidden">
         {/* Header Section */}
-        <div className="bg-blue-500 text-white flex items-center p-6">
+        <div className="bg-blue-500 text-white flex   items-center p-6">
           <img
             src={`${backendURL}/upload/${lawyer.fileName}`}
             alt={lawyer.name}
@@ -54,6 +57,12 @@ const LawyerDesktopUI = () => {
             <h1 className="text-2xl font-bold">{lawyer.name}</h1>
             <p className="mt-1 text-lg flex items-center">
               <FaBriefcase className="mr-2" /> {lawyer.category}
+            </p>
+            <p className="mt-1 text-lg flex items-center">
+              <RiGraduationCapFill className="mr-2" /> {lawyer.qualification}
+            </p>
+            <p className="mt-1 text-lg flex items-center">
+              <MdPlace className="mr-2" /> {lawyer.workplace}
             </p>
           </div>
         </div>
@@ -147,7 +156,7 @@ const LawyerDesktopUI = () => {
             Reviews
           </button> */}
           </div>
-          <Link to={"/cta"}>
+          <Link to={`/booking/${lawyer._id}`}>
             <button
               className=" py-3 w-52 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 transition"
               // onClick={() => alert(`Appointment booked on ${selectedDate} at ${selectedTime}`)}

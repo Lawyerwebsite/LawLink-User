@@ -7,7 +7,7 @@ const BlogCard = () => {
       id: 1,
       img: "https://raghava-legal.com/wp-content/uploads/2024/05/OIP-1.jpeg",
       title: 'Business Formations, Contracts Entity Formation and Contracts Lawyer in Chennai, India',
-      path: '/business',
+      path: '/blog/business',
       content: "Merlyn Law Firm's Contract Lawyers in Chennai help clients in transitioning their entrepreneurial ideas into fully functioning",
     },
     {

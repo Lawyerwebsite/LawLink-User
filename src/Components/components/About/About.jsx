@@ -2,13 +2,16 @@ import React from 'react';
 import AboutCard from './AboutCard';
 import Aboutnav from "./Aboutnav";
 import CtaApp from '../NavComponent/CtaApp';
+import NavbarComp from '../../ReusableComponents/NavbarComponent';
+import Footer from '../Footer';
 
 
 
 const About = () => {
   return (
+    <>
+    <NavbarComp/>
     <div>
-      <Aboutnav/>
     <div className="w-full max-w-7xl p-8 mt-10 mb-8 sm:w-11/12 sm:h-auto bg-white shadow-xl border rounded-lg mx-auto ">
       {/* <div>
         <Aboutnav/>
@@ -66,9 +69,10 @@ const About = () => {
           <h1 className='font-bold text-3xl ml-5 text-center underline'>Our Expert Team</h1> <br/>
           <AboutCard/>
         </div>
-        <CtaApp/>
     </div>
+    <Footer/>
     </div>
+    </>
   )
 };
 

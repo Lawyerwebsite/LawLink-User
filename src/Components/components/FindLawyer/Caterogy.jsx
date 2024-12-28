@@ -18,24 +18,20 @@ const Categories = () => {
 
   const visibleCategories = showAll ? categories : categories.slice(0, 6);
 
-  const cardDesign = () =>{
-    return(
-      <div></div>
-    )
-  }
+ 
 
   return (
     <div className=" mx-auto px-8 py-6 ">
       {/* Categories Header */}
       <div className="flex flex-col justify-center items-center mb-8">
-        <h2 className="text-3xl font-bold text-gray-800 ">Lawyers</h2>
-        <p className="text-center mt-3">Access to experienced lawyers, effective strategies, and reliable legal support right here.</p>
-        <button
+        <h2 className="text-3xl font-extrabold text-gray-800 ">Lawyers</h2>
+        <p className="text-center font-bold mt-3">Access to experienced lawyers, effective strategies, and reliable legal support right here.</p>
+        {/* <button
           onClick={() => setShowAll(!showAll)}
           className="text-blue-600 hover:underline text-lg"
         >
           {showAll ? "Show Less" : "View All"}
-        </button>
+        </button> */}
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-6 gap-6">

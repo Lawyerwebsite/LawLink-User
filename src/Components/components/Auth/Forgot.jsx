@@ -31,14 +31,14 @@ const Forgot = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:8000/user/forgot", {
+      const response = await axios.post("http://localhost:7000/user/forgot", {
         email: inputData.email,
         newPassword: inputData.newPassword,
         confirmPassword:inputData.confirmPassword,
       });
 
       toast.success(response.data.message);
-      navigate("/signin");
+      navigate("/login");
     } catch (err) {
       toast.error(err.response?.data?.message || "Something went wrong");
     }
@@ -116,7 +116,7 @@ const Forgot = () => {
           {/* Back to Login Link */}
           <p className="mt-4 text-center text-white">
             Remember your password?{" "}
-            <Link to="/signin" className="text-blue-400 hover:underline font-medium">
+            <Link to="/login" className="text-blue-400 hover:underline font-medium">
               Login here
             </Link>
           </p>

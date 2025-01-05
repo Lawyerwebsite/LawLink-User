@@ -13,7 +13,7 @@ const Home = () => {
         </div>
       </section>
       <section className="w-full">
-        <div className="mx-20 max-[425px]:mx-5 max-md:mx-12 max-lg:mx-14 max-xl:mx-16">
+        <div className="mx-20 max-[425px]:mx-5 max-md:mx-12 max-lg:mx-14 max-xl:mx-16 mb-4">
           <KeyFeatures />
         </div>
       </section>

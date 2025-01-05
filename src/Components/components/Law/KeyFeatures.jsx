@@ -1,61 +1,61 @@
 import React from 'react';
-import Button from './Button';
+import Button from './Button'; 
 
 const KeyFeatures = () => {
   const keyList = [
     {
       id: 1,
       title: "CIVIL LAWS",
-      Logo: "https://cdn-icons-png.flaticon.com/128/3115/3115546.png",
+      Logo: "https://cdn-icons-png.flaticon.com/128/3248/3248677.png", 
       slogan: "Your Legal Journey, Our Guiding Hand.",
       path: "/civillaw"
     },
     {
       id: 2,
       title: "CRIMINAL LAWS",
-      Logo: "https://cdn-icons-png.flaticon.com/128/13338/13338285.png",
+      Logo: "https://cdn-icons-png.flaticon.com/128/3248/3248678.png",
       slogan: "From Victim to Victory",
       path: "/criminallaw"
     },
     {
       id: 3,
       title: "FAMILY LAWS",
-      Logo: "https://cdn-icons-png.flaticon.com/128/10295/10295735.png",
+      Logo: "https://cdn-icons-png.flaticon.com/128/3248/3248680.png", 
       slogan: "Turning Complexity Into Clarity",
       path: "/familylaw"
     },
     {
       id: 4,
       title: "BANKING LAWS",
-      Logo: "https://cdn-icons-png.flaticon.com/128/12199/12199617.png",
+      Logo: "https://cdn-icons-png.flaticon.com/128/3248/3248681.png", 
       slogan: "Smart Banking for the Good Life",
       path: "/bankinglaw"
     },
     {
       id: 5,
       title: "CORPORATE LAWS",
-      Logo: "https://cdn-icons-png.flaticon.com/128/9235/9235055.png",
+      Logo: "https://cdn-icons-png.flaticon.com/128/3248/3248682.png", 
       slogan: "Legal Excellence, Personalized Service",
       path: "/corporatelaw"
     },
     {
       id: 6,
       title: "SERVICE LAWS",
-      Logo: "https://cdn-icons-png.flaticon.com/128/17048/17048323.png",
+      Logo: "https://cdn-icons-png.flaticon.com/128/3248/3248683.png", 
       slogan: "Legal services can transform lives",
       path: "/servicelaw"
     },
     {
       id: 7,
       title: "BUSINESS LAWS",
-      Logo: "https://cdn-icons-png.flaticon.com/128/11526/11526934.png",
+      Logo: "https://cdn-icons-png.flaticon.com/128/3248/3248684.png", 
       slogan: "Your Legal Journey, Our Guiding Hand.",
       path: "/businesslaw"
     },
     {
       id: 8,
       title: "IMMIGRATION LAWS",
-      Logo: "https://cdn-icons-png.flaticon.com/128/9655/9655487.png",
+      Logo: "https://cdn-icons-png.flaticon.com/128/3248/3248685.png", 
       slogan: "Turning Complexity Into Clarity",
       path: "/immigrationlaw"
     }
@@ -63,19 +63,19 @@ const KeyFeatures = () => {
 
   const KeyStyle = ({ title, logo, slogan, path }) => {
     return (
-      <div className='p-4 h-30 flex flex-col justify-between items-center gap-6 border rounded-lg shadow-md shadow-gray-300 py-10'>
-        <div className='font-medium text-xl text-blue-600 text-center'>{title}</div>
-        <img src={logo} alt={title} className='w-[70px] hover:scale-125' />
-        <p className='font-medium text-lg text-start'>{slogan}</p>
+      <div className='p-4 h-30 flex flex-col justify-between items-center gap-4 border rounded-xl shadow-lg bg-white hover:bg-blue-500 hover:scale-110 hover:shadow-xl transition-transform duration-300'>
+        <div className='font-bold text-xl text-center text-gray-800 hover:text-white'>{title}</div>
+        <img src={logo} alt={title} className='w-[80px]' />
+        <p className='font-medium text-md text-center text-gray-600 hover:text-white'>{slogan}</p>
         <Button btnName={"Know More"} path={path} />
       </div>
     );
   };
 
   return (
-    <div>
-      <p className='text-3xl font-bold mb-4 text-center mt-10 '>Our Services</p>
-      <div className='grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-10 m-8'>
+    <div className='bg-gray-100 text-gray-800 py-12'>
+      <p className='text-4xl font-extrabold mb-8 text-center'>Our Services</p>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-10'>
         {keyList.map((value) => (
           <KeyStyle
             key={value.id}
@@ -86,7 +86,6 @@ const KeyFeatures = () => {
           />
         ))}
       </div>
-      
     </div>
   );
 };

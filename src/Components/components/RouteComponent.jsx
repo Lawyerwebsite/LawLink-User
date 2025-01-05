@@ -99,6 +99,7 @@ const RouteComponent = () => {
       <Route path="/review" element={<ReviewForm/>}/>
       <Route path="/abdul" element={<LawyerProfile/>}/>
       <Route path="/abdul1" element={<Detials/>}/>
+     
     </Routes>
   );
 };

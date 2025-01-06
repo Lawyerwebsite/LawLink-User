@@ -43,7 +43,7 @@ const FindLawyer = () => {
 
   return (
     <div className="flex min-h-screen bg-gray-100">
-      <aside className="w-80 bg-white shadow-lg p-8">
+      <aside className="w-80 bg-white shadow-2xl p-8  border-gray-400">
         <h2 className="text-2xl font-bold text-gray-800 mb-6">Filters</h2>
 
         <div className="mb-8">
@@ -114,7 +114,7 @@ const FindLawyer = () => {
       </aside>
 
       <main className="flex-grow p-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
           {filteredLawyers.map((lawyer) => (
             <div
               key={lawyer._id}
@@ -124,9 +124,9 @@ const FindLawyer = () => {
                 <img
                   src={lawyer.img || `http://localhost:7000/upload/${lawyer.fileName}`}
                   alt={lawyer.name}
-                  className="w-full h-64 object-cover"
+                  className="w-full h-64 object-fill"
                 />
-                <div className="absolute top-3 left-3 bg-blue-500 text-white text-lg px-4 py-2 rounded-full shadow">
+                <div className="absolute top-0 left-5 bg-blue-500 text-white text-lg px-4 py-2 rounded-full shadow">
                   {lawyer.specialization}
                 </div>
               </div>

@@ -47,6 +47,7 @@ import LawyerProfile from "./Lawyer/LawyerInfo/LawyerProfile";
 import Detials from "./Lawyer/LawyerInfo/Detials";
 
 
+
 const RouteComponent = () => {
   return (
     <Routes>
@@ -99,6 +100,7 @@ const RouteComponent = () => {
       <Route path="/review" element={<ReviewForm/>}/>
       <Route path="/abdul" element={<LawyerProfile/>}/>
       <Route path="/abdul1" element={<Detials/>}/>
+     
      
     </Routes>
   );

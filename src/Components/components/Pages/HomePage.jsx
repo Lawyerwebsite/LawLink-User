@@ -6,6 +6,7 @@ import KeyFeatures from "../Law/KeyFeatures";
 import Testimonial from "../Testimonals";
 import Footer from "../Footer";
 import Categories from "../FindLawyer/Caterogy";
+import TestimonialSlider from "../../ReusableComponents/Review";
 
 const HomePage = () => {
   return (
@@ -24,7 +25,7 @@ const HomePage = () => {
       </section>
       
       <section>
-        <Testimonial />
+        <TestimonialSlider />
       </section>
       <footer>
         <Footer />

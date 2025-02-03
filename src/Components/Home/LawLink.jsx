@@ -6,6 +6,7 @@ import Hero from '../ReusableComponents/Hero'
 import Categories from '../components/FindLawyer/Caterogy'
 import KeyFeatures from '../components/Law/KeyFeatures'
 import Testimonial from '../components/Testimonals'
+import TestimonialSlider from '../ReusableComponents/Review'
 
 const LawLink = () => {
   return (
@@ -17,7 +18,7 @@ const LawLink = () => {
         <Hero/>
         <Categories/>
         <KeyFeatures/>
-        <Testimonial/>
+        <TestimonialSlider/>
     </main>
     <footer>
         <Footer/>

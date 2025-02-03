@@ -38,6 +38,18 @@ import Contact from "./Components/ReusableComponents/Contact";
 import ErrorPage from "./Components/ReusableComponents/404-Error";
 import Confirmation from "./Components/components/NavComponent/Confirmation";
 import EditProfile from "./Components/ReusableComponents/Profile";
+import { Target } from "react-feather";
+import Heavy from "./Components/components/Blog/servicesexp/First";
+import Casecategories from "./Components/components/Blog/servicesexp/Civilhero";
+import FamilyLawsHero from "./Components/components/Blog/servicesexp/Familyhero";
+import BankingLawSection from "./Components/components/Blog/servicesexp/Bankinghero";
+import CorporateHero from "./Components/components/Blog/servicesexp/Corparatehero";
+import ServiceHero from "./Components/components/Blog/servicesexp/ServicesHero";
+import BusinessLawsHero from "./Components/components/Blog/servicesexp/BusinessHero";
+import ImmigrationLawsHero from "./Components/components/Blog/servicesexp/ImmigrationHero";
+
+
+
 
 const RouteComp = () => {
   return (
@@ -90,6 +102,16 @@ const RouteComp = () => {
       <Route path="/nrc" element={<Nrc/>}/>
       <Route path="/penal" element={<Penal/>}/>
       <Route path="/details" element={<Details/>}/>
+      <Route path="/main" element={<Heavy/>}/>
+      <Route path="/main2" element={<Casecategories/>}/>
+      <Route path="/main3" element={<FamilyLawsHero/>}/>
+      <Route path="/main4" element={<BankingLawSection/>}/>
+      <Route path="/main5" element={<CorporateHero/>}/>
+      <Route path="/main6" element={<ServiceHero/>}/>
+      <Route path="/main7" element={<BusinessLawsHero/>}/>
+      <Route path="/main8" element={<ImmigrationLawsHero/>}/>
+      
+      
 
      
       

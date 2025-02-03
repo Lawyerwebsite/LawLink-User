@@ -8,180 +8,87 @@ import logo from "../assets/Logo.png";
 
 const Footer = () => {
   return (
-    // <div className="bg-white text-black border-t-2 border-slate-400 shadow-inner ">
-    //   <div className="grid grid-cols-2 sm:grid-cols-1 lg:grid-cols-4 p-8 text-center">
-    //     <div>
-    //       <img src={logo} alt="JusticeHub Logo" className="w-32 mb-4  " />
-    //       <h1 className="text-sm font-semibold mb-5 text-start">
-    //         A lawyer with a briefcase <br />
-    //         can steal more than <br /> a thousand with guns
-    //       </h1>
-    //       <div className="flex space-x-4 text-2xl">
-    //         <CiFacebook className="hover:text-black hover:scale-125 transition-transform" />
-    //         <SlSocialInstagram className="hover:text-black hover:scale-125 transition-transform" />
-    //         <FaTwitter className="hover:text-black hover:scale-125 transition-transform" />
-    //         <SiWhatsapp className="hover:text-black hover:scale-125 transition-transform" />
-    //       </div>
-    //     </div>
+    <footer className="px-4 divide-y dark:bg-gray-300 dark:text-gray-800 bg-blue-200">
+      <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0 ">
+        {/* Logo and Quote Section */}
+        <div className="lg:w-1/3">
+          <a rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 lg:justify-start">
+            <div className="flex items-center justify-center w-12 h-12 rounded-full dark:bg-violet-600">
+              <img src={logo} alt="JusticeHub Logo" className="w-8 h-8" />
+            </div>
+            <span className="self-center text-2xl font-semibold">Law Link</span>
+          </a>
+          <h1 className="text-sm font-semibold mt-4">
+            A lawyer with a briefcase <br />
+            can steal more than <br /> a thousand with guns
+          </h1>
+          <div className="flex justify-start space-x-4 text-2xl mt-4">
+            <a href="#" aria-label="Facebook" className="hover:text-blue-800 hover:scale-125 transition-transform">
+              <CiFacebook />
+            </a>
+            <a href="#" aria-label="Instagram" className="hover:text-blue-800 hover:scale-125 transition-transform">
+              <SlSocialInstagram />
+            </a>
+            <a href="#" aria-label="Twitter" className="hover:text-blue-800 hover:scale-125 transition-transform">
+              <FaTwitter />
+            </a>
+            <a href="#" aria-label="WhatsApp" className="hover:text-blue-800 hover:scale-125 transition-transform">
+              <SiWhatsapp />
+            </a>
+          </div>
+        </div>
 
-    //     <div>
-    //       <h2 className="text-xl font-bold mb-4">Quick Links</h2>
-    //       <ul className="space-y-2">
-    //         <li>
-    //           <Link to="/" className="hover:underline">
-    //             Home
-    //           </Link>
-    //         </li>
-    //         <li>
-    //           <Link to="/lawyer" className="hover:underline">
-    //             Find Lawyer
-    //           </Link>
-    //         </li>
-    //         <li>
-    //           <Link to="/about" className="hover:underline">
-    //             About Us
-    //           </Link>
-    //         </li>
-    //         <li>
-    //           <Link to="/blog" className="hover:underline">
-    //             Blog
-    //           </Link>
-    //         </li>
+        {/* Quick Links Section */}
+        <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
+          <div className="space-y-3">
+            <h3 className="tracking-wide uppercase dark:text-gray-900">Quick Links</h3>
+            <ul className="space-y-1">
+              {[
+                { label: "Home", to: "/" },
+                { label: "Find Lawyer", to: "/lawyer" },
+                { label: "About Us", to: "/about" },
+                { label: "Blog", to: "/blog" },
+                { label: "Contact Us", to: "/contact" },
+              ].map((link, idx) => (
+                <li key={idx}>
+                  <Link to={link.to} className="hover:underline">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-    //         <li>
-    //           <Link to="/contact" className="hover:underline">
-    //             Contact Us
-    //           </Link>
-    //         </li>
-    //       </ul>
-    //     </div>
+          {/* Legal Policies Section */}
+          <div className="space-y-3">
+            <h3 className="tracking-wide uppercase dark:text-gray-900">Legal Policies</h3>
+            <ul className="space-y-1">
+              {[
+                { label: "Terms & Services", to: "/terms" },
+                { label: "Privacy Policy", to: "/policy" },
+              ].map((policy, idx) => (
+                <li key={idx}>
+                  <Link to={policy.to} className="hover:underline">
+                    {policy.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-    //     <div>
-    //       <h2 className="text-xl font-bold mb-4">Legal Policies</h2>
-    //       <ul className="space-y-2">
-    //         <li>
-    //           <Link to="/terms" className="hover:underline">
-    //             Terms & Services
-    //           </Link>
-    //         </li>
-    //         <li>
-    //           <Link to="/policy" className="hover:underline">
-    //             Privacy Policy
-    //           </Link>
-    //         </li>
-    //       </ul>
-    //     </div>
-
-    //     <div>
-    //       <h2 className="text-xl font-bold mb-4">Contact Us</h2>
-    //       <p>Contact us directly at:</p>
-    //       <p className="font-semibold cursor-pointer">9876543210</p>
-    //       <p className="font-semibold cursor-pointer">lawlink@gmail.com</p>
-    //     </div>
-    //   </div>
-
-    //   <div className=" py-4 text-center">
-    //     <h1 className="text-lg font-semibold">© 2024 Law Link</h1>
-    //   </div>
-    // </div>
-    <div className="bg-blue-50 text-blue-900 border-t-4 border-blue-500 shadow-inner">
-  {/* Grid Section */}
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 p-8 text-center">
-    {/* Logo and Quote Section */}
-    <div>
-      <img src={logo} alt="JusticeHub Logo" className="w-32 mb-4 mx-auto" />
-      <h1 className="text-sm font-semibold mb-5 text-start">
-        A lawyer with a briefcase <br />
-        can steal more than <br /> a thousand with guns
-      </h1>
-      <div className="flex justify-center space-x-4 text-2xl text-blue-600">
-        <a
-          href="#"
-          aria-label="Facebook"
-          className="hover:text-blue-800 hover:scale-125 transition-transform"
-        >
-          <CiFacebook />
-        </a>
-        <a
-          href="#"
-          aria-label="Instagram"
-          className="hover:text-blue-800 hover:scale-125 transition-transform"
-        >
-          <SlSocialInstagram />
-        </a>
-        <a
-          href="#"
-          aria-label="Twitter"
-          className="hover:text-blue-800 hover:scale-125 transition-transform"
-        >
-          <FaTwitter />
-        </a>
-        <a
-          href="#"
-          aria-label="WhatsApp"
-          className="hover:text-blue-800 hover:scale-125 transition-transform"
-        >
-          <SiWhatsapp />
-        </a>
+          {/* Contact Us Section */}
+          <div className="space-y-3">
+            <h3 className="uppercase dark:text-gray-900">Contact Us</h3>
+            <p>Contact us directly at:</p>
+            <p className="font-semibold cursor-pointer hover:underline">9876543210</p>
+            <p className="font-semibold cursor-pointer hover:underline">lawlink@gmail.com</p>
+          </div>
+        </div>
       </div>
-    </div>
 
-    {/* Quick Links Section */}
-    <div>
-      <h2 className="text-xl font-bold mb-4 text-blue-700">Quick Links</h2>
-      <ul className="space-y-2">
-        {[
-          { label: "Home", to: "/" },
-          { label: "Find Lawyer", to: "/lawyer" },
-          { label: "About Us", to: "/about" },
-          { label: "Blog", to: "/blog" },
-          { label: "Contact Us", to: "/contact" },
-        ].map((link, idx) => (
-          <li key={idx}>
-            <Link to={link.to} className="hover:underline hover:text-blue-800">
-              {link.label}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-
-    {/* Legal Policies Section */}
-    <div>
-      <h2 className="text-xl font-bold mb-4 text-blue-700">Legal Policies</h2>
-      <ul className="space-y-2">
-        {[
-          { label: "Terms & Services", to: "/terms" },
-          { label: "Privacy Policy", to: "/policy" },
-        ].map((policy, idx) => (
-          <li key={idx}>
-            <Link to={policy.to} className="hover:underline hover:text-blue-800">
-              {policy.label}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-
-    {/* Contact Us Section */}
-    <div>
-      <h2 className="text-xl font-bold mb-4 text-blue-700">Contact Us</h2>
-      <p>Contact us directly at:</p>
-      <p className="font-semibold cursor-pointer hover:underline hover:text-blue-800">
-        9876543210
-      </p>
-      <p className="font-semibold cursor-pointer hover:underline hover:text-blue-800">
-        lawlink@gmail.com
-      </p>
-    </div>
-  </div>
-
-  {/* Footer Bottom */}
-  <div className="py-4 text-center border-t border-blue-300">
-    <h1 className="text-lg font-semibold text-blue-700">© 2024 Law Link</h1>
-  </div>
-</div>
-
+      {/* Footer Bottom */}
+      <div className="py-6 text-sm text-center dark:text-gray-600">© 2024 Law Link. All rights reserved.</div>
+    </footer>
   );
 };
 

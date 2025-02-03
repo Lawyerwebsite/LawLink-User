@@ -10,9 +10,12 @@ const FindLawyer = () => {
   const [lawyers, setLawyers] = useState([]);
   const [searchLocation, setSearchLocation] = useState("");
   const [selectedGender, setSelectedGender] = useState("");
-  const [selectedSpecialization, setSelectedSpecialization] =
-    useState(categoryFromParams);
+  const [selectedSpecialization, setSelectedSpecialization] = useState(
+    categoryFromParams
+  );
+  const [isFiltersOpen, setIsFiltersOpen] = useState(false); // Hidden by default on mobile
 
+  // Fetch lawyers from the backend
   useEffect(() => {
     const getLawyers = async () => {
       try {
@@ -26,6 +29,7 @@ const FindLawyer = () => {
     getLawyers();
   }, []);
 
+  // Filter lawyers based on search criteria
   const filteredLawyers = lawyers.filter((lawyer) => {
     const locationMatch =
       !searchLocation ||
@@ -42,27 +46,42 @@ const FindLawyer = () => {
   });
 
   return (
-    <div className="flex min-h-screen bg-gray-100">
-      <aside className="w-80 bg-white shadow-2xl p-8  border-gray-400">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6">Filters</h2>
+    <div className="flex min-h-screen bg-gray-50">
+      {/* Collapsible Filters Sidebar */}
+      <aside
+        className={`w-64 bg-white shadow-lg p-6 transition-transform duration-300 fixed h-screen z-40 ${
+          isFiltersOpen ? "translate-x-0" : "-translate-x-64"
+        } md:translate-x-0`} // Always visible on desktop, hidden on mobile by default
+      >
+        {/* Toggle Button (Visible only on mobile) */}
+        <button
+          onClick={() => setIsFiltersOpen(!isFiltersOpen)}
+          className="absolute top-4 -right-5 bg-black opacity-20 text-white p-1 rounded-full shadow-lg z-50 md:hidden" // Hidden on desktop
+        >
+          {isFiltersOpen ? "✕" : "☰"}
+        </button>
 
-        <div className="mb-8">
-          <label className="block text-lg font-semibold text-gray-700 mb-3">
+        <h2 className="text-xl font-bold text-gray-800 mb-6">Filters</h2>
+
+        {/* Search Location Filter */}
+        <div className="mb-6">
+          <label className="block text-sm font-medium text-gray-700 mb-2">
             Search Location
           </label>
           <input
             type="text"
             placeholder="Enter location (e.g., Chennai)"
-            className="w-full px-5 py-3 border rounded-lg text-lg"
+            className="w-full px-3 py-2 border rounded-md text-sm"
             value={searchLocation}
             onChange={(e) => setSearchLocation(e.target.value)}
           />
         </div>
 
-        <div className="mb-8">
-          <h3 className="text-lg font-semibold text-gray-700 mb-3">Gender</h3>
+        {/* Gender Filter */}
+        <div className="mb-6">
+          <h3 className="text-sm font-medium text-gray-700 mb-2">Gender</h3>
           {["Male", "Female"].map((gender) => (
-            <div key={gender} className="flex items-center mb-4">
+            <div key={gender} className="flex items-center mb-2">
               <input
                 type="radio"
                 name="gender"
@@ -70,28 +89,29 @@ const FindLawyer = () => {
                 value={gender}
                 checked={selectedGender === gender}
                 onChange={() => setSelectedGender(gender)}
-                className="w-5 h-5 mr-3"
+                className="w-4 h-4 mr-2"
               />
-              <label htmlFor={gender} className="text-gray-800 text-lg">
+              <label htmlFor={gender} className="text-sm text-gray-800">
                 {gender}
               </label>
             </div>
           ))}
           <button
             onClick={() => setSelectedGender("")}
-            className="text-md text-blue-500 hover:underline"
+            className="text-sm text-blue-500 hover:underline"
           >
             Clear Gender Filter
           </button>
         </div>
 
-        <div>
-          <h3 className="text-lg font-semibold text-gray-700 mb-3">
+        {/* Specialization Filter */}
+        <div className="mb-6">
+          <h3 className="text-sm font-medium text-gray-700 mb-2">
             Specialization
           </h3>
           <select
-            className="w-full px-5 py-3 border rounded-lg text-lg"
-            value={categoryFromParams.toLowerCase()}
+            className="w-full px-3 py-2 border rounded-md text-sm"
+            value={selectedSpecialization}
             onChange={(e) => setSelectedSpecialization(e.target.value)}
           >
             <option value="">All Specializations</option>
@@ -106,47 +126,72 @@ const FindLawyer = () => {
           </select>
           <button
             onClick={() => setSelectedSpecialization("")}
-            className="mt-3 text-md text-blue-500 hover:underline"
+            className="mt-2 text-sm text-blue-500 hover:underline"
           >
             Clear Specialization Filter
           </button>
         </div>
+
+        {/* Clear All Filters Button */}
+        <button
+          onClick={() => {
+            setSearchLocation("");
+            setSelectedGender("");
+            setSelectedSpecialization("");
+          }}
+          className="mt-4 w-full py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition duration-200"
+        >
+          Clear All Filters
+        </button>
       </aside>
 
-      <main className="flex-grow p-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10
-        ">
+      {/* Main Content */}
+      <main
+        className={`flex-grow p-6 transition-all duration-300 ${
+          isFiltersOpen ? "ml-64" : "ml-0"
+        } md:ml-64`} // Adjusted margin for desktop
+        style={{ overflowY: "auto", height: "calc(100vh - 64px)" }} // Scrollable main content
+      >
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {filteredLawyers.map((lawyer) => (
             <div
               key={lawyer._id}
-              className="bg-white shadow-lg rounded-xl overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out"
+              className="bg-white shadow-sm rounded-lg overflow-hidden transform hover:scale-105 hover:shadow-md transition duration-300 ease-in-out"
             >
-              <div className="relative p-6">
+              <div className="relative">
                 <img
-                  src={lawyer.img || `http://localhost:7000/upload/${lawyer.fileName}`}
+                  src={
+                    lawyer.img || `http://localhost:7000/upload/${lawyer.fileName}`
+                  }
                   alt={lawyer.name}
-                  className="w-full h-64 object-fill"
+                  className="w-full h-48 object-cover"
+                  onError={(e) => {
+                    e.target.src = "path/to/fallback/image.jpg"; // Fallback image
+                  }}
                 />
-                <div className="absolute top-0 left-5 bg-blue-500 text-white text-lg px-4 py-2 rounded-full shadow">
-                  {lawyer.specialization}
+                <div className="absolute top-2 left-2 bg-blue-500 text-white text-xs px-3 py-1 rounded-full">
+                
                 </div>
               </div>
-              <div className="p-6">
-                <h2 className="text-2xl font-bold text-gray-800 truncate">
+              <div className="p-4">
+                <h2 className="text-lg font-semibold text-gray-800 truncate">
                   {lawyer.name}
                 </h2>
-                <p className="text-gray-600 text-lg mt-3">
+                <p className="text-sm text-gray-600 mt-1">
                   <strong>Specialization:</strong> {lawyer.category}
                 </p>
-                <p className="text-gray-600 mt-3">
+                <p className="text-sm text-gray-600 mt-1">
                   <strong>Location:</strong> {lawyer.city}
                 </p>
-                <p className="text-gray-600 mt-3">
+                <p className="text-sm text-gray-600 mt-1">
                   <strong>Qualification:</strong> {lawyer.qualification}
                 </p>
-                <div className="flex items-center justify-between mt-6">
+                <p className="text-sm text-gray-600 mt-1">
+                  <strong>EnrollmentNumber:</strong> {lawyer.enrollmentnumber}
+                </p>
+                <div className="flex items-center justify-between mt-4">
                   <Link to={`/card/${lawyer._id}`}>
-                    <button className="py-3 px-6 bg-blue-500 text-white font-semibold rounded-lg shadow hover:bg-blue-600 transition duration-200">
+                    <button className="py-2 px-4 bg-blue-500 text-white text-sm font-semibold rounded-lg shadow hover:bg-blue-600 transition duration-200">
                       View Profile
                     </button>
                   </Link>
@@ -156,6 +201,7 @@ const FindLawyer = () => {
           ))}
         </div>
 
+        {/* No Lawyers Found Message */}
         {filteredLawyers.length === 0 && (
           <div className="text-center mt-12">
             <p className="text-gray-500 text-lg">

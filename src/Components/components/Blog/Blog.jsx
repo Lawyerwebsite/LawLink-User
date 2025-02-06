@@ -1,102 +1,138 @@
-import React, { useState } from "react";
-import { IoSearchOutline } from "react-icons/io5";
-import { FaAngleRight } from "react-icons/fa";
-import BlogCard from "./BlogCard";
-import CatBlog from "./CatBlog";
-import { useNavigate } from 'react-router-dom';
-import NavbarComp from "../../ReusableComponents/NavbarComponent";
-import Footer from "../Footer";
+import React from "react";
+
+const blogs = [
+  {
+    id: 1,
+    title: "Understanding Your Legal Rights",
+    description:
+      "A guide to help you understand basic legal rights and responsibilities.",
+    image:
+      "https://themewagon.github.io/justlaw/assets/img/blog/single_blog_1.png",
+    author: "John Doe",
+    date: "Feb 5, 2025",
+  },
+  {
+    id: 2,
+    title: "How to Choose the Right Lawyer",
+    description:
+      "Important factors to consider when selecting a lawyer for your case.",
+    image: "https://raghava-legal.com/wp-content/uploads/2024/05/OIP-1.jpeg",
+    author: "Jane Smith",
+    date: "Feb 3, 2025",
+  },
+  {
+    id: 3,
+    title: "Steps to File a Legal Complaint",
+    description:
+      "A step-by-step guide on how to file a legal complaint in court.",
+    image:
+      "https://static.vecteezy.com/system/resources/thumbnails/022/769/081/small_2x/gavel-scale-and-law-books-in-the-bookshelf-ai-generated-photo.jpg",
+    author: "Robert Brown",
+    date: "Jan 29, 2025",
+  },
+  {
+    id: 4,
+    title: "Steps to File a Legal Complaint",
+    description:
+      "A step-by-step guide on how to file a legal complaint in court.",
+    image:
+      "https://2.imimg.com/data2/FU/RM/MY-120747/law-1000x1000.png",
+    author: "Robert Brown",
+    date: "Jan 29, 2025",
+  },
+  {
+    id: 5,
+    title: "Steps to File a Legal Complaint",
+    description:
+      "A step-by-step guide on how to file a legal complaint in court.",
+    image:
+      "https://www.amitpatelandassociates.in/wp-content/uploads/2024/05/Intellectual-Property-Lawyer-Ahmedabad.png",
+    author: "Robert Brown",
+    date: "Jan 29, 2025",
+  },
+  {
+    id: 6,
+    title: "Steps to File a Legal Complaint",
+    description:
+      "A step-by-step guide on how to file a legal complaint in court.",
+    image:
+      "https://blog.ipleaders.in/wp-content/uploads/2020/03/Judgement.png",
+    author: "Robert Brown",
+    date: "Jan 29, 2025",
+  },
+  {
+    id: 7,
+    title: "Steps to File a Legal Complaint",
+    description:
+      "A step-by-step guide on how to file a legal complaint in court.",
+    image:
+      "https://singhania.in/admin/newsimage/news-1637743257.jpg",
+    author: "Robert Brown",
+    date: "Jan 29, 2025",
+  },
+  {
+    id: 8,
+    title: "Steps to File a Legal Complaint",
+    description:
+      "A step-by-step guide on how to file a legal complaint in court.",
+    image:
+      "https://themewagon.github.io/justlaw/assets/img/blog/single_blog_2.png",
+    author: "Robert Brown",
+    date: "Jan 29, 2025",
+  },
+  {
+    id: 9,
+    title: "Steps to File a Legal Complaint",
+    description:
+      "A step-by-step guide on how to file a legal complaint in court.",
+    image:
+      "https://technext.github.io/lawmaker/images/blog-1.jpg",
+    author: "Robert Brown",
+    date: "Jan 29, 2025",
+  },
+];
 
 const Blog = () => {
-    const [searchQuery, setSearchQuery] = useState("");  
-    const navigate = useNavigate();  
-
-    const handleSearch = () => {
-        if (searchQuery.toLowerCase().includes("civil")) {
-            navigate("/civil");  
-        } else if (searchQuery.toLowerCase().includes("criminal")) {
-            navigate("/criminal"); 
-        }  else if (searchQuery.toLowerCase().includes("family")) {
-            navigate("/family"); 
-        }  else if (searchQuery.toLowerCase().includes("banking")) {
-            navigate("/banking");  
-        }  else if (searchQuery.toLowerCase().includes("service")) {
-            navigate("/service"); 
-        }  else if (searchQuery.toLowerCase().includes("corporate")) {
-            navigate("/corporate");  
-        }  else if (searchQuery.toLowerCase().includes("realstate")) {
-            navigate("/realstate");  
-        }  else if (searchQuery.toLowerCase().includes("immigration")) {
-            navigate("/immigration");  
-        } 
-        else {
-            alert("No matching category found.");
-        }
-    };
-
-    return (
-        <div>
-            <NavbarComp/>
-            <div className="relative mt-16">
-                <img
-                    src="https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                    alt="Background"
-                    className="h-[200px] w-full object-cover"
-                />
-                <div className="absolute top-1/2  right-0 mr-2 transform-translate-x-1/2 -translate-y-1/2  max-w-2xl flex  bg-white shadow-lg rounded-full px-4 py-2">
-                    <input
-                        type="text"
-                        placeholder="Search blogs..."
-                        className="flex-grow px-4 py-2 text-gray-700 focus:outline-none rounded-l-full"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}  
-                    />
-                    <button className="text-blue-600 hover:text-blue-800" onClick={handleSearch}>
-                        <IoSearchOutline className="text-2xl" />
-                    </button>
-                </div>
-            </div>
-
-            <div className="bg-gray-300 border shadow-gray-700 h-auto text-justify w-full py-10">
-                <h1 className="font-bold text-3xl text-center mb-10 underline">Latest Judgements</h1>
-                <div className="flex flex-wrap justify-evenly items-start">
-                    <img
-                        src="https://img.freepik.com/premium-photo/scales-justice-placed-lawyers-office-table_941742-7957.jpg"
-                        alt="Scales of Justice"
-                        className="h-[300px] w-[300px] rounded-md p-5"
-                    />
-                    <div className="max-w-lg">
-                        <p className="font-bold text-lg text-center underline mb-4">
-                            Family Courts grant divorce on the grounds of mutual consent
-                        </p>
-                        <p className="font-normal text-lg mb-4">
-                            Mutual agreement between the parties, settling all claims and counterclaims, is a key aspect of divorce by mutual consent. Family courts worldwide, including in India under the Hindu Marriage Act, 1955, recognize this form of divorce.
-                        </p>
-                        <p className="font-normal text-lg mb-4">
-                            A joint petition is filed before the family court, stating that the spouses have been living separately for a prescribed period (usually one year or more) and cannot live together. If the court is satisfied, a divorce decree is granted.
-                        </p>
-                        <a href="/details" className="text-blue-600 hover:underline flex items-center">
-                            Read more <FaAngleRight className="ml-1" />
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div className="flex justify-evenly">
-                <div>
-                <CatBlog />
-                    
-                </div>
-                <div>
-                <BlogCard />
-                </div>
-            </div>
-            <Footer/>
+  return (
+    <>
+      <div className=" w-full h-[50vh] bg-[url('https://img.freepik.com/free-photo/ancient-books-adorn-library-carefully-arranged-with-classics-rare-gems_157027-2488.jpg?t=st=1738608055~exp=1738611655~hmac=b356cb2d952e662e0acd65f946dc6977ea1485ccd267c8f26e42b9f869492d84&w=1060')] bg-no-repeat bg-center bg-cover">
+        <div className="flex flex-col items-center justify-center h-[50vh]">
+          <h1 className="text-4xl font-bold text-white">Blog</h1>
         </div>
-    );
+      </div>
+      <section className="">
+        <div className="container mx-auto py-10 px-4">
+          <h2 className="text-3xl font-semibold text-center mb-6">
+            Latest Blog Posts
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {blogs.map((blog) => (
+              <div
+                key={blog.id}
+                className="bg-white rounded-lg shadow-md overflow-hidden p-5"
+              >
+                <img
+                  src={blog.image}
+                  alt={blog.title}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-4">
+                  <h3 className="text-xl font-bold mb-2">{blog.title}</h3>
+                  <p className="text-gray-600 mb-4">{blog.description}</p>
+                  <p className="text-sm text-gray-500">
+                    By {blog.author} on {blog.date}
+                  </p>
+                  
+                </div>
+                <button className="px-4 py-3 bg-blue-500 rounded-lg hover:bg-blue-600 text-lg font-poppins">Read More..</button>
+                
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
 };
 
 export default Blog;
-
-
-

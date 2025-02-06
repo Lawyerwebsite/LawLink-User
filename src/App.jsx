@@ -47,6 +47,9 @@ import CorporateHero from "./Components/components/Blog/servicesexp/Corparateher
 import ServiceHero from "./Components/components/Blog/servicesexp/ServicesHero";
 import BusinessLawsHero from "./Components/components/Blog/servicesexp/BusinessHero";
 import ImmigrationLawsHero from "./Components/components/Blog/servicesexp/ImmigrationHero";
+import AboutPage from "./Components/components/Pages/AboutPage";
+import BlogPage from "./Components/components/Pages/BlogPage";
+
 
 
 
@@ -88,10 +91,10 @@ const RouteComp = () => {
 
       <Route path="/review" element={<ReviewForm/>} />
       <Route path="/profile" element={<EditProfile/>} />
-      <Route path="/about" element={<About/>} />
+      <Route path="/about" element={<AboutPage/>} />
       <Route path="/contact" element={<Contact/>} />
 
-      <Route path="/blog" element={<Blog/>} />
+      <Route path="/blog" element={<BlogPage/>} />
       <Route path="/business" element={<Business/>} />
       <Route path="/aboutlaw" element={<AboutLaw/>}/>
       <Route path="/appeal" element={<Appeal/>}/>

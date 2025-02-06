@@ -5,7 +5,7 @@ import Footer from "../Footer";
 
 const AboutPage = () => {
   return (
-    <div className="mt-[80px] w-full">
+    <div className="mt-[50px] w-full">
       <section>
         <NavbarComp />
       </section>

@@ -20,7 +20,7 @@ const Hero = () => {
   }, [images.length]);
 
   return (
-    <section className="relative mt-[73px] ">
+    <section className="relative mt-[65px] ">
       <div
         className="absolute inset-0 bg-cover bg-center transition-all duration-500 sm:w-full"
         style={{ backgroundImage: `url(${images[currentIndex]})` }}

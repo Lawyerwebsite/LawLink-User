@@ -31,10 +31,10 @@ const NavbarComp = () => {
   }, []);
 
   return (
-    <div className="w-full fixed top-1 z-20 bg-white shadow-md">
-      <nav className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+    <div className="w-full fixed top-0 z-20 bg-white shadow-md">
+      <nav className=" w-full px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
         {/* Logo Section */}
-        <div className="flex items-center">
+        <div className="">
           <Link to={"/"}>
             <img
               src={HeaderLogo}
@@ -58,7 +58,7 @@ const NavbarComp = () => {
             <NavLink
               key={index}
               to={value.path}
-              className={`px-3 py-2 rounded-md text-sm font-medium ${
+              className={`px-3 py-2 rounded-md text-base font-bold ${
                 value.path === location.pathname
                   ? "bg-blue-600 text-white"
                   : "text-blue-600 hover:bg-blue-100"

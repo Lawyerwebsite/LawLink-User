@@ -46,7 +46,8 @@ const FindLawyer = () => {
   });
 
   return (
-    <div className="flex min-h-screen bg-gray-50">
+    <div className="flex flex-col  bg-gray-50">
+      {/* <div className="w-full h-[60vh] bg-[url('https://img.freepik.com/free-photo/photorealistic-lawyer-environment_23-2151152218.jpg?t=st=1738579296~exp=1738582896~hmac=5c3c4616e0f760ffe2068f983689704749b8a46bdf19e7b4016a64b4cb6dbfa3&w=996')] bg-no-repeat bg-cover bg-center"></div> */}
       {/* Collapsible Filters Sidebar */}
       <aside
         className={`w-64 bg-white shadow-lg p-6 transition-transform duration-300 fixed h-screen z-40 ${

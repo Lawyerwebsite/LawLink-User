@@ -5,7 +5,7 @@ import { IoPersonCircle } from "react-icons/io5";
 
 const NavbarComp = () => {
   const navMenuList = [
-    { page: "HOME", path: "/" },
+    { page: "HOME", path: "/home" },
     { page: "LAWYER", path: "/lawyer" },
     { page: "ABOUT", path: "/about" },
     { page: "BLOG", path: "/blog" },
@@ -24,7 +24,8 @@ const NavbarComp = () => {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
   const userId = localStorage.getItem("userId");
-
+  console.log(userId);
+  
   useEffect(() => {
     const user = localStorage.getItem("token");
     setIsUserLoggedIn(!!user);

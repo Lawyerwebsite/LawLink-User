@@ -38,7 +38,7 @@ const Forgot = () => {
       });
 
       toast.success(response.data.message);
-      navigate("/login");
+      navigate("/");
     } catch (err) {
       toast.error(err.response?.data?.message || "Something went wrong");
     }

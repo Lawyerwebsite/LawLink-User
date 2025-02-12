@@ -25,9 +25,12 @@ const Signin = () => {
       const response = await axios.post("http://localhost:7000/user/signin", inputData);
       toast.success(response.data.message);
       localStorage.setItem("token", response.data.token)
+      localStorage.setItem("userId", response.data._id)
       console.log("Token:", response.data.token); 
+      console.log("userId", response.data._id);
+      
       setInputData(initialState);
-      navigate("/");
+      navigate("/home");
     } catch (error) {
       if (error.response) {
         toast.error(error.response.data.message);

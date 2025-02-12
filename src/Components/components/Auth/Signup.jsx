@@ -34,7 +34,7 @@ export const Signup = () => {
     try {
       const res = await axios.post("http://localhost:7000/user/signup", inputdata);
       toast.success(res.data.message);
-      navigate("/login");
+      navigate("/");
     } catch (err) {
       toast.error(err.response?.data?.message || "Something went wrong");
     }

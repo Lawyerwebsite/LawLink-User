@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Loader from "./Components/ReusableComponents/Loader";
 import Signup from "./Components/components/Auth/Signup";
-import Signin from "./components/components/Auth/Signin";
+// import Signin from "./components/components/Auth/Signin";
 import Forgot from "./components/components/Auth/Forgot";
 import LawLink from "./Components/Home/LawLink";
 // import FindLawyer from "./components/components/Lawyer";
@@ -49,6 +49,7 @@ import BusinessLawsHero from "./Components/components/Blog/servicesexp/BusinessH
 import ImmigrationLawsHero from "./Components/components/Blog/servicesexp/ImmigrationHero";
 import AboutPage from "./Components/components/Pages/AboutPage";
 import BlogPage from "./Components/components/Pages/BlogPage";
+import Signin from "./Components/components/Auth/Signin";
 
 
 

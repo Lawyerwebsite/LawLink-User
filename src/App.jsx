@@ -47,9 +47,7 @@ import ImmigrationLawsHero from "./Components/components/Blog/servicesexp/Immigr
 import AboutPage from "./Components/components/Pages/AboutPage";
 import BlogPage from "./Components/components/Pages/BlogPage";
 import Signin from "./Components/components/Auth/Signin";
-
-
-
+import ForgotPassword from "./Components/components/Auth/Forgot"
 
 
 const RouteComp = () => {
@@ -58,7 +56,7 @@ const RouteComp = () => {
       <Route path="/loader" element={<Loader />} />
       <Route path="/register" element={<Signup />} />
       <Route path="/" element={<Signin />} />
-      <Route path="/forgotpassword" element={<Forg/>} />
+      <Route path="/forgotpassword" element={<ForgotPassword/>} />
       <Route path="*" element={<ErrorPage/>}/>
 
       <Route path="/home" element={<LawLink />} />

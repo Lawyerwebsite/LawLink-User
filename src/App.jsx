@@ -1,10 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Loader from "./Components/ReusableComponents/Loader";
 import Signup from "./Components/components/Auth/Signup";
-// import Signin from "./components/components/Auth/Signin";
-import Forgot from "./components/components/Auth/Forgot";
 import LawLink from "./Components/Home/LawLink";
-// import FindLawyer from "./components/components/Lawyer";
 import Lawyer from "./components/components/FindLawyer/Lawyer";
 import LawyerProfile from "./components/components/Lawyer/LawyerInfo/LawyerProfile";
 import FindLawyer from "./Components/components/Lawyer/LawyerAppointment";
@@ -61,7 +58,7 @@ const RouteComp = () => {
       <Route path="/loader" element={<Loader />} />
       <Route path="/register" element={<Signup />} />
       <Route path="/" element={<Signin />} />
-      <Route path="/forgotpassword" element={<Forgot />} />
+      <Route path="/forgotpassword" element={<Forg/>} />
       <Route path="*" element={<ErrorPage/>}/>
 
       <Route path="/home" element={<LawLink />} />

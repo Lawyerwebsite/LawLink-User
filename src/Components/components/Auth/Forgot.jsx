@@ -6,7 +6,7 @@ import axios from "axios"; // Import Axios for API requests
 import { toast } from "react-toastify"; // Import Toast for notifications
 import "react-toastify/dist/ReactToastify.css"; // Import Toast styles
 
-const Forgot = () => {
+const ForgotPassword = () => {
   const [inputData, setInputData] = useState({
     email: "",
     newPassword: "",
@@ -126,4 +126,4 @@ const Forgot = () => {
   );
 };
 
-export default Forgot;
+export default ForgotPassword;

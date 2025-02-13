@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Loader from "./Components/ReusableComponents/Loader";
 import Signup from "./Components/components/Auth/Signup";
 import LawLink from "./Components/Home/LawLink";
-import Lawyer from "./components/components/FindLawyer/Lawyer";
+// import Lawyer from "./components/components/FindLawyer/Lawyer";
 import LawyerProfile from "./components/components/Lawyer/LawyerInfo/LawyerProfile";
 import LawyerDesktopUI from "./Components/components/Lawyer/Appointment";
 import CtaApp from "./Components/components/NavComponent/CtaApp";

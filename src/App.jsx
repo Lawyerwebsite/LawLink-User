@@ -3,7 +3,7 @@ import Loader from "./Components/ReusableComponents/Loader";
 import Signup from "./Components/components/Auth/Signup";
 import LawLink from "./Components/Home/LawLink";
 // import Lawyer from "./components/components/FindLawyer/Lawyer";
-import LawyerProfile from "./components/components/Lawyer/LawyerInfo/LawyerProfile";
+// import LawyerProfile from "./components/components/Lawyer/LawyerInfo/LawyerProfile";
 import LawyerDesktopUI from "./Components/components/Lawyer/Appointment";
 import CtaApp from "./Components/components/NavComponent/CtaApp";
 import BankingLawyer from "./Components/components/Lawyer/Banking";
@@ -60,7 +60,7 @@ const RouteComp = () => {
       {/* <Route path="findlawyer" element={<FindLawyer />} /> */}
       {/* <Route path="/lawyerbycategory" element={<Lawyer />} /> */}
       {/* <Route path="findlawyer/lawyers" element={<Lawyer />} /> */}
-      <Route path="/findlawyer/lawyer/:id" element={<LawyerProfile />} />
+      {/* <Route path="/findlawyer/lawyer/:id" element={<LawyerProfile />} /> */}
       <Route path="/confirmation/:_id" element={<Confirmation/>}/>
       <Route path="/lawyer" element={<FindLawyerPage/>} />
       <Route path="/card/:_id" element={<LawyerDesktopUI/>} />

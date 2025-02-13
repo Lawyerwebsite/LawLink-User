@@ -69,8 +69,8 @@ const Confirmation = () => {
         <Outlet />
       </div>
       <div className="px-9">
-        <Link to={"/"}>
-          <button className=" hover:text-blue-600">Go to Homepage</button>
+        <Link to={"/home"}>
+          <button className=" hover:text-blue-600 py-3 px-3 rounded-lg bg-blue-500">Go to Homepage</button>
         </Link>
       </div>
     </>

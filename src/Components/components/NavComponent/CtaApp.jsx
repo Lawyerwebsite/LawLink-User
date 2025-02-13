@@ -18,6 +18,7 @@ const initialState = {
 
 const CtaApp = () => {
   const { _id } = useParams();
+  const {id} = localStorage.getItem(userId);
   
   const navigate = useNavigate();
   const [formData, setFormData] = useState(initialState);
@@ -141,7 +142,7 @@ const CtaApp = () => {
                 );
 
                 toast.success("Appointment booked successfully!");
-                navigate("/"); 
+                navigate(`/confirmation/${id}`); 
               } else {
                 toast.error("Payment failed. Please try again.");
               }

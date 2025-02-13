@@ -5,7 +5,7 @@ import { IoPersonCircle } from "react-icons/io5";
 
 const NavbarComp = () => {
   const navMenuList = [
-    { page: "HOME", path: "/home" },
+    { page: "HOME", path: "/" },
     { page: "LAWYER", path: "/lawyer" },
     { page: "ABOUT", path: "/about" },
     { page: "BLOG", path: "/blog" },

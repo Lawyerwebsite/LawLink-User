@@ -38,7 +38,7 @@ const CtaApp = () => {
     try {
       // await
       axios
-        .get(`http://localhost:7000/admin/lawyerforuser/?_id=${_id}`)
+        .get(`https://lawyer-backend-k28a.onrender.com/admin/lawyerforuser/?_id=${_id}`)
         .then((res) => {
           console.log(res.data);
           setLawyerInfo(res.data.lawyers);
@@ -76,7 +76,7 @@ const CtaApp = () => {
     try {
       // Step 1: Create a payment order
       const orderResponse = await axios.post(
-        "http://localhost:7000/payment/create-order",
+        "https://lawyer-backend-k28a.onrender.com/payment/create-order",
         paymentData,
         {
           headers: {
@@ -106,7 +106,7 @@ const CtaApp = () => {
 
             try {
               const verifyResponse = await axios.post(
-                "http://localhost:7000/payment/verify-payment",
+                "https://lawyer-backend-k28a.onrender.com/payment/verify-payment",
                 paymentDetails,
                 {
                   headers: {
@@ -132,7 +132,7 @@ const CtaApp = () => {
                 };
 
                 await axios.post(
-                  "http://localhost:7000/appointment/add",
+                  "https://lawyer-backend-k28a.onrender.com/appointment/add",
                   appointmentData,
                   {
                     headers: {

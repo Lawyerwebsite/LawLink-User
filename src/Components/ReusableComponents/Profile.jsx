@@ -193,7 +193,7 @@ const Profile = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:7000/user/profile`,{
+      .get(`https://lawyer-backend-k28a.onrender.com/user/profile`,{
         headers: {
           Authorization : `Bearer ${localStorage.getItem("token")}`
         }
@@ -223,7 +223,7 @@ const Profile = () => {
     }
 
     try {
-      await axios.put(`http://localhost:7000/user/profile/update`, formData, {
+      await axios.put(`https://lawyer-backend-k28a.onrender.com/user/profile/update`, formData, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         }
@@ -242,7 +242,7 @@ const Profile = () => {
 
       <div className="flex justify-center">
         <img
-          src={`http://localhost:7000/upload/${user.profileImage}`}
+          src={`https://lawyer-backend-k28a.onrender.com/upload/${user.profileImage}`}
           alt="Profile"
           className="w-24 h-24 rounded-full mt-4"
         />

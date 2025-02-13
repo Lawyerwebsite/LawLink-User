@@ -24,7 +24,7 @@ const BookAppointment = () => {
   useEffect(() => {
     if (doctorId || date) {
       axios
-        .get(`http://localhost:7000/api/slots/user/${doctorId}?date=${date}`, {
+        .get(`https://lawyer-backend-k28a.onrender.com/api/slots/user/${doctorId}?date=${date}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`,
           },
@@ -72,7 +72,7 @@ const BookAppointment = () => {
     };
 
     try {
-      const orderResponse = await axios.post('http://localhost:7000/api/payment/create-order', paymentData, {
+      const orderResponse = await axios.post('https://lawyer-backend-k28a.onrender.com/api/payment/create-order', paymentData, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
@@ -97,7 +97,7 @@ const BookAppointment = () => {
             };
 
             try {
-              const verifyResponse = await axios.post('http://localhost:7000/api/payment/verify-payment', paymentDetails, {
+              const verifyResponse = await axios.post('https://lawyer-backend-k28a.onrender.com/api/payment/verify-payment', paymentDetails, {
                 headers: {
                   Authorization: `Bearer ${localStorage.getItem('token')}`,
                 },
@@ -118,7 +118,7 @@ const BookAppointment = () => {
                 };
 
                 // Save appointment to database
-                await axios.post('http://localhost:7000/api/appointment/booking', appointmentData, {
+                await axios.post('https://lawyer-backend-k28a.onrender.com/api/appointment/booking', appointmentData, {
                   headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`,
                   },

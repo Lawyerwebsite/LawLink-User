@@ -22,7 +22,7 @@ const Signin = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:7000/user/signin", inputData);
+      const response = await axios.post("https://lawyer-backend-k28a.onrender.com/user/signin", inputData);
       toast.success(response.data.message);
       localStorage.setItem("token", response.data.token)
       localStorage.setItem("userId", response.data._id)

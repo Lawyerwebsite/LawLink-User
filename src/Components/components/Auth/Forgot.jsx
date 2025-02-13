@@ -31,7 +31,7 @@ const ForgotPassword = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:7000/user/forgot", {
+      const response = await axios.post("https://lawyer-backend-k28a.onrender.com/user/forgot", {
         email: inputData.email,
         newPassword: inputData.newPassword,
         confirmPassword:inputData.confirmPassword,

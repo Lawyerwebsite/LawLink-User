@@ -11,7 +11,7 @@ const Lawyer = () => {
   const getLawyers = async () => {
     try {
       await axios
-        .get("http://localhost:7000/admin/lawyers/")
+        .get("https://lawyer-backend-k28a.onrender.com/admin/lawyers/")
         .then((res) => {
           setLawyers(res.data);
         })
@@ -33,7 +33,7 @@ const Lawyer = () => {
     return (
       <div className="relative border p-4 rounded-lg h-50 flex flex-col justify-between gap-4 shadow-md shadow-gray-300">
         <div className='font-bold text-xl text-blue-600 text-center'>{title}</div>
-        <img src={`http://localhost:7000/upload/${img}`} alt={title} className=" w-full h-80 object-cover transition-transform duration-200 hover:translate-z-10 hover:scale-105 hover:z-10" />
+        <img src={`https://lawyer-backend-k28a.onrender.com/upload/${img}`} alt={title} className=" w-full h-80 object-cover transition-transform duration-200 hover:translate-z-10 hover:scale-105 hover:z-10" />
         <p className='font-bold text-lg text-center' >{content}</p>
         <Link to={path} className='text-center'>
         <Button btnName={"View More"}/>

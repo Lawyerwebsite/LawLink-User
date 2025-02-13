@@ -34,7 +34,7 @@ const OnlineBookingAppointment = () => {
   const fetchDoctorDetails = async () => {
     try {
       await axios
-        .get(`http://localhost:7000/admin/lawyerprofile/?_id=${adminId}`)
+        .get(`https://lawyer-backend-k28a.onrender.com/admin/lawyerprofile/?_id=${adminId}`)
         .then((res) => {
           setLawyer([res.data]);
           const consultationFee = res.data.consultationFee;
@@ -76,7 +76,7 @@ const OnlineBookingAppointment = () => {
 
     try {
       const orderResponse = await axios.post(
-        "http://localhost:7000/payment/create-order",
+        "https://lawyer-backend-k28a.onrender.com/payment/create-order",
         paymentData,
         {
           headers: {
@@ -105,7 +105,7 @@ const OnlineBookingAppointment = () => {
 
             try {
               const verifyResponse = await axios.post(
-                "http://localhost:7000/payment/verify-payment",
+                "https://lawyer-backend-k28a.onrender.com/payment/verify-payment",
                 paymentDetails,
                 {
                   headers: {
@@ -135,7 +135,7 @@ const OnlineBookingAppointment = () => {
 
                 // Save appointment to database
                 await axios.post(
-                  "http://localhost:7000/api/zoommetting/create-meeting",
+                  "https://lawyer-backend-k28a.onrender.com/api/zoommetting/create-meeting",
                   appointmentData,
                   {
                     headers: {
@@ -190,7 +190,7 @@ const OnlineBookingAppointment = () => {
                 >
                   <div className="img-con w-[180px] lg:w-[200px] h-[180px] lg:h-[200px] flex justify-center items-center p-2 shadow-md shadow-slate-600">
                     <img
-                      src={`http://localhost:7000/upload/${lawyer.name}`}
+                      src={`https://lawyer-backend-k28a.onrender.com/upload/${lawyer.name}`}
                       alt="Doctor"
                       className="object-fill w-full h-full rounded-md"
                     />

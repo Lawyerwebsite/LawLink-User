@@ -51,11 +51,11 @@ const RouteComp = () => {
     <Routes>
       <Route path="/loader" element={<Loader />} />
       <Route path="/register" element={<Signup />} />
-      <Route path="/" element={<Signin />} />
+      <Route path="/login" element={<Signin />} />
       <Route path="/forgotpassword" element={<ForgotPassword/>} />
       <Route path="*" element={<ErrorPage/>}/>
 
-      <Route path="/home" element={<LawLink />} />
+      <Route path="/" element={<LawLink />} />
       
       {/* <Route path="findlawyer" element={<FindLawyer />} /> */}
       {/* <Route path="/lawyerbycategory" element={<Lawyer />} /> */}

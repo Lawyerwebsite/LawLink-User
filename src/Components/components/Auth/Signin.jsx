@@ -30,7 +30,7 @@ const Signin = () => {
       console.log("userId", response.data._id);
       
       setInputData(initialState);
-      navigate("/home");
+      navigate("/");
     } catch (error) {
       if (error.response) {
         toast.error(error.response.data.message);

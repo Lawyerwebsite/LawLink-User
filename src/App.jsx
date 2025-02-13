@@ -58,14 +58,10 @@ const RouteComp = () => {
       <Route path="/home" element={<LawLink />} />
       
       {/* <Route path="findlawyer" element={<FindLawyer />} /> */}
-      <Route path="/lawyerbycategory" element={<Lawyer />} />
-      <Route path="findlawyer/lawyers" element={<Lawyer />} />
+      {/* <Route path="/lawyerbycategory" element={<Lawyer />} /> */}
+      {/* <Route path="findlawyer/lawyers" element={<Lawyer />} /> */}
       <Route path="/findlawyer/lawyer/:id" element={<LawyerProfile />} />
       <Route path="/confirmation/:_id" element={<Confirmation/>}/>
-
-      <Route path="/abdul" element={<LawyerProfile/>} />
-
-    
       <Route path="/lawyer" element={<FindLawyerPage/>} />
       <Route path="/card/:_id" element={<LawyerDesktopUI/>} />
       <Route path="/booking/:_id" element={<CtaApp/>} />

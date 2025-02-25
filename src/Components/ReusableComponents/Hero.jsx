@@ -20,36 +20,31 @@ const Hero = () => {
   }, [images.length]);
 
   return (
-    <section className="relative mt-[65px] ">
+    <section className="w-full h-[95vh] bg-gray-100  max-sm:h-[500px] flex justify-center items-center">
+    <div className="relative w-full h-full overflow-hidden">
       <div
-        className="absolute inset-0 bg-cover bg-center transition-all duration-500 sm:w-full"
-        style={{ backgroundImage: `url(${images[currentIndex]})` }}
+        className="absolute inset-0 w-auto h-auto bg-cover bg-center bg-no-repeat sm:bg-fixed max-sm:bg-top max-sm:bg-cover transition-all duration-500"
+        style={{
+          backgroundImage: `url(${images[currentIndex]})`, // Fixed syntax for dynamic URL
+        }}
       ></div>
 
-      <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8 sm:max-w-full">
-        <div className="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right p-18">
-          <h1 className="text-4xl font-extrabold sm:text-5xl text-white md: flex items-center justify-center flex-col">
-            Justice for Everyone
-            <br />
-            <strong className="font-extrabold text-cyan-200 sm:block pt-3">
-              Stop RACISM!
-            </strong>
-          </h1>
-
-          <div className="mt-4 flex flex-wrap justify-center gap-4 text-center">
-            <Link to={"/cta"}>
-              <button className="w-full rounded bg-blue-900 px-12 py-3 text-sm font-medium cursor-pointer text-white shadow focus:outline-none focus:ring active:bg-gray-950 sm:w-auto">
-                Get Started
-              </button>
-            </Link>
-
-            <Link to={"/lawyer"}>
-              <button className=" w-full rounded bg-white px-12 py-3 text-sm font-medium text-blue-900 shadow focus:outline-none focus:ring active:text-zinc-950 sm:w-auto">
-                Explore Service
-              </button>
-            </Link>
-          </div>
-        </div>
+      <div className="w-full h-full bg-black absolute top-0 bg-opacity-15 flex flex-col justify-center text-center items-center px-20 max-sm:px-5">
+        <h1 className="text-2xl font-extrabold sm:text-5xl text-white">
+        Justice for Everyone 
+          <br />
+          <strong className="mt-4 font-extrabold text-white sm:block">
+          Stop RACISM!
+          </strong>
+        </h1>
+        <Link>
+          <span
+            href="#"
+            className="block w-full rounded bg-blue-500 mt-8 px-8 py-3  font-semibold text-white shadow focus:outline-none focus:ring sm:w-auto hover:bg-blue-700 transition"
+          >
+         Get Started 
+          </span>
+        </Link>
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-2">
@@ -57,13 +52,14 @@ const Hero = () => {
           <button
             key={index}
             className={`w-3 h-3 rounded-full ${
-              index === currentIndex ? "bg-blue-500" : "bg-white"
+              index === currentIndex ? "bg-blue-400" : "bg-white"
             }`}
             onClick={() => setCurrentIndex(index)}
           ></button>
         ))}
       </div>
-    </section>
+    </div>
+  </section>
   );
 };
 

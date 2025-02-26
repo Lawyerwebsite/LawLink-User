@@ -10,7 +10,7 @@ import { RiGraduationCapFill } from "react-icons/ri";
 // import LawNav from "./LawyerInfo/LawNav";
 
 const LawyerDesktopUI = () => {
-   const backendURL= "https://lawyer-backend-k28a.onrender.com"
+   const backendURL= "https://lawyer-backend-production.up.railway.app"
   const { _id } = useParams();
   const casesHandled = 220;
   const rating = 3
@@ -23,7 +23,7 @@ const LawyerDesktopUI = () => {
     try {
       // await
       axios
-        .get(`https://lawyer-backend-k28a.onrender.com/admin/lawyerforuser/?_id=${_id}`)
+        .get(`https://lawyer-backend-production.up.railway.app/admin/lawyerforuser/?_id=${_id}`)
         .then((res) => {
           console.log(res.data);
           setLawyerInfo(res.data.lawyers);

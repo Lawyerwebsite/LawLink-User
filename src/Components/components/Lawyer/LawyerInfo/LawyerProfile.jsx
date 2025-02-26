@@ -20,7 +20,7 @@ const LawyerProfile = () => {
 
     try {
       await axios
-        .get(`http://localhost:7000/admin/getadmin/user/?_id=${_id}`, {
+        .get(`https://lawyer-backend-production.up.railway.app/getadmin/user/?_id=${_id}`, {
           headers: { Authorization: `Bearer ${authToken}` },
         })
         .then((res) => {

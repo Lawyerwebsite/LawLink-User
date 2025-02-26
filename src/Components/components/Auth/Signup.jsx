@@ -32,7 +32,7 @@ export const Signup = () => {
     }
 
     try {
-      const res = await axios.post("https://lawyer-backend-k28a.onrender.com/user/signup", inputdata);
+      const res = await axios.post("https://lawyer-backend-production.up.railway.app/user/signup", inputdata);
       toast.success(res.data.message);
       navigate("/login");
     } catch (err) {

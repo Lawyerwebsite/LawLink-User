@@ -34,7 +34,7 @@ const OnlineBookingAppointment = () => {
   const fetchDoctorDetails = async () => {
     try {
       await axios
-        .get(`https://lawyer-backend-k28a.onrender.com/admin/lawyerprofile/?_id=${adminId}`)
+        .get(`https://lawyer-backend-production.up.railway.app/admin/lawyerprofile/?_id=${adminId}`)
         .then((res) => {
           setLawyer([res.data]);
           const consultationFee = res.data.consultationFee;
@@ -76,7 +76,7 @@ const OnlineBookingAppointment = () => {
 
     try {
       const orderResponse = await axios.post(
-        "https://lawyer-backend-k28a.onrender.com/payment/create-order",
+        "https://lawyer-backend-production.up.railway.app/payment/create-order",
         paymentData,
         {
           headers: {
@@ -105,7 +105,7 @@ const OnlineBookingAppointment = () => {
 
             try {
               const verifyResponse = await axios.post(
-                "https://lawyer-backend-k28a.onrender.com/payment/verify-payment",
+                "https://lawyer-backend-production.up.railway.app/payment/verify-payment",
                 paymentDetails,
                 {
                   headers: {
@@ -135,7 +135,7 @@ const OnlineBookingAppointment = () => {
 
                 // Save appointment to database
                 await axios.post(
-                  "https://lawyer-backend-k28a.onrender.com/api/zoommetting/create-meeting",
+                  "https://lawyer-backend-production.up.railway.app/api/zoommetting/create-meeting",
                   appointmentData,
                   {
                     headers: {
@@ -190,7 +190,7 @@ const OnlineBookingAppointment = () => {
                 >
                   <div className="img-con w-[180px] lg:w-[200px] h-[180px] lg:h-[200px] flex justify-center items-center p-2 shadow-md shadow-slate-600">
                     <img
-                      src={`https://lawyer-backend-k28a.onrender.com/upload/${lawyer.name}`}
+                      src={`https://lawyer-backend-production.up.railway.app/upload/${lawyer.name}`}
                       alt="Doctor"
                       className="object-fill w-full h-full rounded-md"
                     />

@@ -193,7 +193,7 @@ const Profile = () => {
 
   useEffect(() => {
     axios
-      .get(`https://lawyer-backend-k28a.onrender.com/user/profile`,{
+      .get(`https://lawyer-backend-production.up.railway.app/user/profile`,{
         headers: {
           Authorization : `Bearer ${localStorage.getItem("token")}`
         }
@@ -223,7 +223,7 @@ const Profile = () => {
     }
 
     try {
-      await axios.put(`https://lawyer-backend-k28a.onrender.com/user/profile/update`, formData, {
+      await axios.put(`https://lawyer-backend-production.up.railway.app/user/profile/update`, formData, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         }
@@ -242,7 +242,7 @@ const Profile = () => {
 
       <div className="flex justify-center">
         <img
-          src={`https://lawyer-backend-k28a.onrender.com/upload/${user.profileImage}`}
+          src={`https://lawyer-backend-production.up.railway.app/upload/${user.profileImage}`}
           alt="Profile"
           className="w-24 h-24 rounded-full mt-4"
         />
